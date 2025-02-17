@@ -1,0 +1,230 @@
+:root {
+    /* CORES */
+    --text-color: #ececec;
+    /* FONTES */
+    --font-pp: 'Poppins', sans-serif;
+    --font-mn: 'Ubuntu Mono', sans-serif;
+    --font-rx: #ab8dff;
+}
+
+/* largura da barra de scroll */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+/* ...Ao segurar a barra */
+::-webkit-scrollbar-thumb {
+    background: #ab8dff; 
+    border-radius: 10px;
+}
+  
+/* Cor ao encostar o mouse */
+::-webkit-scrollbar-thumb:hover {
+    background: #735db1; 
+}
+
+/* Configurações do HTML global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-pp);
+}
+
+/* Estilo do body */
+body {
+    background-color: #0f1011;
+    color: var(--text-color);
+}
+
+/* Tamanho padrão para todas as seções*/
+section {
+    height: 100vh;
+}
+
+/* Cor dos textos com detaque em roxo */
+span {
+    color: #ab8dff;
+}
+/* Títulos nível 1 */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+/* Backgrounds... */
+#greets {
+    background-image: url('../src/img/bg-c1.png');
+}
+#a-me {
+    background-image: url('../src/img/bg-c2.png');
+}
+#prj {
+    background-image: url('../src/img/bg-c3.png');
+}
+
+/* Parágrafo do texto principal */
+#greets p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* Títulos nível 2 */
+h2 {
+    font-family: var(--font-mn);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* Cofigurações gerais do container */
+.cont1 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+
+/* Configurações do desenho no container*/
+.cont1 img {
+    width: 30%;
+    border-radius: 50%;
+    filter: brightness(0.7);
+}
+
+/* Tamanho do texto principal na tela */
+.intro {
+    max-width: 50%;
+}
+
+.cont2 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5%;
+}
+
+/* Tamanho do texto principal na tela */
+.sobre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 65%;
+    background-color: #19191d;
+    padding: 5%;
+    position: relative;
+    border-radius: 12px;
+}
+
+.sobre h2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+.sobre p {
+    text-align: justify;
+    line-height: 2;
+    text-align: justify;
+}
+
+#prj h2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Cria quatro colunas de tamanhos iguais */
+    gap: 20px;
+    text-align: center;
+    max-width: 1000px; /* Ajusta a largura máxima do grid */
+    margin: 0 auto; /* Centraliza o grid na tela */
+}
+
+.project-item {
+    background-color: #19191d;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    min-height: 250px; /* Define uma altura mínima para alinhar os cards */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.project-item h3 {
+    font-size: 1.3rem;
+    color:#ab8dff;
+    margin-bottom: 10%;
+}
+
+.project-item #breve {
+    font-size: 1.5rem;
+    margin-top: 18%;
+}
+
+.project-item p {
+    text-align: justify;
+    line-height: 1.5;
+}
+
+#tech {
+    height: 70vh;
+    margin-top: 10%;
+}
+
+#tech h2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+.cont3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.cont3 img {
+    width: 160px;
+}
+
+.cont3 img:hover {
+    animation: expand 2s infinite;
+}
+
+@keyframes expand {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+    
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    gap: 40%;
+    background-color: #19191d;
+}
+
+footer span p {
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+footer span:hover {
+    color: #ab8dff;
+}

@@ -1,0 +1,163 @@
+/* Mobile devices */
+@media (max-width: 480px) {
+    .cont1 {
+        flex-direction: column-reverse;
+        height: 100vh;
+    }
+
+    .cont1 img {
+        width: 70%;
+        margin-bottom: -20%;
+    }
+
+    .intro {
+        max-width: 90%;
+    }
+
+    .intro h1 {
+        font-size: 1.5rem;
+    }
+
+    .sobre {
+        width: 90%;
+        margin-top: 20%;
+    }
+
+    .sobre h2 {
+        font-size: 1.8rem;
+        margin-bottom: 10%;
+    }
+
+    .sobre p {
+        font-size: 0.8rem;
+    }
+
+    #prj h2 {
+        font-size: 1.8rem;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+        max-width: 320px;
+    }
+
+    #tech {
+        margin-top: 160%;
+    }
+
+    #tech h2 {
+        font-size: 1.7rem;
+    }
+
+    .cont3 img {
+        width: 100px;
+        margin-top: 5%;
+    }
+
+    footer {
+        height: 18vh;
+        gap: 15%;
+        font-size: 0.6rem;
+        flex-direction: column-reverse;
+    }
+
+    footer span img {
+        width: 28%;
+        height: auto;
+    }
+    
+    footer span p {
+        color: var(--text-color);
+        margin-bottom: 8px;
+        font-size: 1rem;
+    }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 1024px) {
+    section {
+        height: 75vh;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .cont1 {
+        justify-content: center;;
+        flex-direction: column-reverse;
+    }
+    
+    /* Configurações do desenho no container*/
+    .cont1 img {
+        width: 45%;
+        border-radius: 50%;
+        margin-bottom: 5%;
+        margin-top: 20%;
+        filter: brightness(0.7);
+    }
+
+    .intro {
+        max-width: 80%;
+    }
+
+    .sobre {
+        width: 80%;
+        margin-top: 30%;
+    }
+
+    #prj h2 {
+        margin-top: 25%;
+    }
+
+    .project-grid {
+        max-width: 800px;
+    }
+
+    .project-item #breve {
+        margin-top: 30%;
+    }
+
+    #tech {
+        height: 60vh;
+    }
+
+    .cont3 img {
+        width: 150px;
+    }
+
+    footer {
+        height: 10vh;
+        gap: 30%;
+    }
+}
+
+/* Notebooks */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    #tech {
+        height: 80vh;
+    }
+
+    .cont3 img {
+        width: 200px;
+    }
+
+    .sobre {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1536px) {
+    .cont3 img {
+        width: 140px;
+    }
+
+    .sobre {
+        width: 70%;
+    }
+
+    footer {
+        height: 12vh;
+    }
+}
