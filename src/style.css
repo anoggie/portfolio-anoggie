@@ -129,6 +129,35 @@ h2 {
     text-align: justify;
 }
 
+#bks {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 5%;
+}
+
+.books {
+    display: flex;
+    gap: 3%;
+    margin-bottom: 10%
+}
+
+#bks h2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+.books img {
+    width: 360px;
+    height: 460px;
+}
+
+.books img:hover {
+    animation: expand 2s infinite;
+}
+
 #prj h2 {
     display: flex;
     justify-content: center;

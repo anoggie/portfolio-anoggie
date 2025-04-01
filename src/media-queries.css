@@ -32,6 +32,35 @@
         font-size: 0.8rem;
     }
 
+    #bks {
+        margin-top: 40%;
+        margin-bottom: 70%;
+    }
+
+    #bks h2 {
+        font-size: 1.7rem;
+        text-align: center;
+        margin-bottom: 5%;
+    }
+    
+    .books {
+        display: flex;
+        flex-direction: column;
+        gap: 3%;
+        margin-bottom: 10%
+    }
+
+    .books img {
+        width: 300px;
+        height: 400px;
+        margin-bottom: 10%;
+        margin-left: 15%;
+    }
+
+    .books img:hover {
+        animation: none;
+    }
+
     #prj h2 {
         font-size: 1.8rem;
     }
@@ -107,12 +136,37 @@
         margin-top: 30%;
     }
 
-    #prj h2 {
-        margin-top: 25%;
+    #bks {
+        margin-top: 70%;
+        margin-bottom: 60%;
+    }
+
+    #bks h2 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 8%;
+    }
+    
+    .books {
+        display: flex;
+        flex-direction: column;
+        gap: 3%;
+        margin-bottom: 10%
+    }
+
+    .books img {
+        width: 300px;
+        height: 400px;
+        margin-bottom: 5%;
+        margin-left: 20%;
+    }
+
+    .books img:hover {
+        animation: none;
     }
 
     .project-grid {
-        max-width: 800px;
+        max-width: 700px;
     }
 
     .project-item #breve {
@@ -129,22 +183,59 @@
 
     footer {
         height: 10vh;
-        gap: 30%;
+        gap: 15%;
     }
 }
 
 /* Notebooks */
-@media (min-width: 1025px) and (max-width: 1440px) {
+@media (min-width: 1024px) and (max-width: 1440px) {
+
     #tech {
         height: 80vh;
+    }
+
+    #bks {
+    height: 80vh;
+    }
+
+    #bks h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 8%;
+    }
+    
+    .books {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 3%;
+    }
+
+    .books img {
+        width: 300px;
+        height: 400px;
+        margin-bottom: 5%;
     }
 
     .cont3 img {
         width: 200px;
     }
 
+    #a-me {
+        height: 70vh;
+    }
     .sobre {
-        width: 80%;
+        width: 85%;
+    }
+
+    #prj {
+        height: 70vh;
+        margin-bottom: 15%;
+    }
+
+    footer {
+        height: 12vh;
+        gap: 25%;
     }
 }
 
