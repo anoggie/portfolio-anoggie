@@ -1,0 +1,69 @@
+/* Notebooks Full HD (1920x1080) */
+@media (max-width: 1920px) {
+  .container {
+    width: 30vw;
+    margin-top: -3px;
+  }
+  img {
+    width: 160px;
+    height: 160px;
+  }
+
+  footer {
+  margin-top: -50px;
+}
+}
+
+/* Notebooks (até 1200px) */
+@media (max-width: 1200px) {
+  .container {
+    width: 50vw;
+    padding: 24px;
+  }
+  img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* Tablets (até 768px) */
+@media (max-width: 768px) {
+  .container {
+    width: 80vw;
+    padding: 18px;
+  }
+  img {
+    width: 140px;
+    height: 140px;
+  }
+  .link {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+
+/* Celulares (até 480px) */
+@media (max-width: 480px) {
+  .container {
+    width: 80vw;
+    margin: 20px 0;
+    padding: 10px;
+    box-shadow: #2f2434 0px 0px 10px 0px;
+  }
+  img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 1.3rem;
+  }
+  p {
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+  }
+  .link {
+    font-size: 13px;
+    padding: 9px;
+  }
+}
