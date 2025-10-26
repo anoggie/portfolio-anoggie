@@ -12,6 +12,8 @@ body {
 
 .container {
   margin: auto;
+  width: 95%;
+  max-width: 1800px; 
 }
 
 h1 {
@@ -20,27 +22,95 @@ h1 {
   margin-bottom: 30px;
 }
 
-select {
-  padding: 10px;
-  background-color: #2a2a2b;
-  border-radius: 10px;
-  border: none;
-  color: #e4e4e4;
-  font-size: 16px;
-  cursor: pointer;
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  user-select: none;
 }
 
-form {
-  display: grid;
-  grid-template-rows: repeat(1, auto);
-  grid-template-columns: repeat(2, 1fr);
+.toggle-label {
+  font-size: 16px;
+  color: #ddd;
+  cursor: default;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 30px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #3b2655;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background-color: #9d52c0;
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+  transform: translateX(40px);
+}
+
+.flex-form {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 18px;
   margin-bottom: 40px;
 }
 
-input, button {
+.form-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  gap: 25px; 
+  align-items: flex-end; 
+  justify-content: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 230px;
+}
+
+.form-group.cidr {
+  min-width: 80px;
+  max-width: 90px;
+  flex-grow: 1;
+}
+
+.form-group.cidr input[type="number"] {
+  width: 100%;
+  text-align: center;
   padding: 10px;
   background-color: #2a2a2b;
   border-radius: 10px;
@@ -49,61 +119,144 @@ input, button {
   font-size: 16px;
 }
 
-form button {
-  grid-column: 1 / -1;
-  justify-self: center;
-  margin-top: 10px;
-  width: 30%;
+label {
+  margin-bottom: 6px;
+  color: #d0b7eb;
+  font-weight: 600;
+  white-space: nowrap; 
 }
 
-button {
-  background-color: #9d52c0;
-  color: white;
+input[type="text"] {
+  padding: 10px;
+  background-color: #2a2a2b;
+  border-radius: 10px;
   border: none;
-  cursor: pointer;
-  transition: background 0.3s ease;
+  color: #e4e4e4;
+  font-size: 16px;
 }
 
-button:hover {
-  background-color: #6d3eab;
-  box-shadow: #8a44ab 0px 0px 20px 0px;
-  transition: background 0.3s ease;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 30px;
-}
-
-th, td {
-  border: 1px solid #9d52c0;
-  padding: 8px;
-  text-align: left;
-}
-
-th {
-  background-color: #3b2655;
-}
-
-tr:nth-child(even) {
-  background-color: #64488a;
-}
-
-/* Remove as setas dos inputs type="number" no Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* Remove as setas no Firefox */
 input[type="number"] {
   appearance: textfield;
   -moz-appearance: textfield;
 }
 
-/* Personaliza a scrollbar para navegadores baseados em Webkit (Chrome, Edge, Safari) */
+.flex-form button {
+  align-self: center;
+  margin-top: 18px;
+  background-color: #9d52c0;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 36px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.flex-form button:hover {
+  background-color: #6d3eab;
+  box-shadow: #8a44ab 0 0 20px 0;
+}
+
+table {
+  display: none; 
+}
+
+/* --- ESTILOS PARA O GRID DE RESULTADOS --- */
+.results-grid {
+  display: grid;
+  /* --- 3 colunas fixas --- */
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  background-color: #2a2a2b;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #3b2655;
+}
+
+.result-item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+  background-color: #3b2655;
+  border-radius: 8px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.result-item strong {
+  color: #d0b7eb;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.result-item span {
+  color: #eee;
+  font-family: monospace; 
+  font-size: 15px;
+}
+
+/* --- MUDANÇA AQUI: Classe .full-width RE-ADICIONADA --- */
+.result-item.full-width {
+  grid-column: 1 / -1; /* Faz o item ocupar todas as 3 colunas */
+}
+
+
+/* --- ESTILOS PARA O CABEÇALHO --- */
+.results-header {
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap;     
+  justify-content: center; 
+  align-items: center;
+  gap: 30px;           
+  margin-bottom: 20px; 
+  width: 100%;
+}
+
+.results-header p {
+  margin: 0; 
+  font-size: 1.1em; 
+  color: #eee;
+}
+
+.results-header p b {
+  color: #d0b7eb; 
+}
+
+.total-and-download {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  align-items: center;
+  gap: 20px; 
+}
+
+/* --- ESTILO PARA O BOTÃO DE DOWNLOAD --- */
+.download-btn {
+  background-color: #6d3eab; 
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 16px; 
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.download-btn:hover {
+  background-color: #9d52c0; 
+}
+/* ------------------------------------------- */
+
 ::-webkit-scrollbar {
   width: 8px;
   background: #1a1a1a;
@@ -116,4 +269,43 @@ input[type="number"] {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #6d3eab;
+}
+
+/* --- Media Queries --- */
+
+@media (max-width: 900px) {
+  /* Em telas menores, o grid vira 2 colunas */
+  .results-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: stretch; 
+  }
+  .form-group {
+    min-width: 0;
+    width: 100%;
+  }
+  .form-group.cidr {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .results-header {
+    gap: 15px; 
+  }
+
+  .total-and-download {
+    gap: 15px;
+  }
+
+  /* Em telas de celular, tudo vira 1 coluna */
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
 }
